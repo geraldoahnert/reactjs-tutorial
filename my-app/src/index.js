@@ -1,5 +1,5 @@
 /* 
-? Parei em: "Completando o jogo"
+? Adicionando a Viagem no Tempo (Time Travel)
 */
 
 import React from "react";
@@ -14,12 +14,7 @@ function Square(props) {
     //     };
     // }
     return (
-        <button
-            className="square"
-            onClick={() => {
-                props({ value: "X" });
-            }}
-        >
+        <button className="square" onClick={props.onClick}>
             {props.value}
         </button>
     );
@@ -115,7 +110,7 @@ function calculateWinner(squares) {
         [0, 4, 8],
         [2, 4, 6],
     ];
-    for (let i = 0; i < lines.lenght; i++) {
+    for (let i = 0; i < lines.length; i++) {
         const [a, b, c] = lines[i];
         if (
             squares[a] &&
